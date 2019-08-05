@@ -15,4 +15,11 @@ class Library
     return nil
   end
 
+  def rental_details_from_title(title_to_search)
+    for book in @books
+      return book[:rental_details] if book[:title] == title_to_search
+    end
+    return nil
+  end
+
 end
