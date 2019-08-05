@@ -5,8 +5,7 @@ require_relative('../library')
 class TestLibrary < MiniTest::Test
 
   def setup
-    @library = Library.new
-    @library << [
+    @library = Library.new([
       {
         title: "learn_to_program",
         rental_details: {
@@ -28,7 +27,11 @@ class TestLibrary < MiniTest::Test
           date: "15/03/19"
         }
       }
-    ]
+    ])
+  end
+
+  def test_get_book
+    assert_equal({:title=>"learn_to_program", :rental_details=>{:student_name=>"Joe", :date=>"01/05/19"}}, @library.get_book(0))
   end
 
 end
