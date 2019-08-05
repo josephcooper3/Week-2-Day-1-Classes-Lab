@@ -13,4 +13,8 @@ class Student
     return @cohort
   end
 
+  def update_name(new_name)
+    @name = new_name
+  end
+
 end
