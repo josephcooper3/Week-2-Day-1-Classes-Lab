@@ -22,4 +22,8 @@ class Library
     return nil
   end
 
+  def add_book_to_library(title_to_add)
+    @books << {:title=>title_to_add, :rental_details=>{:student_name=>"", :date=>""}}
+  end
+
 end

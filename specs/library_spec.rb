@@ -42,13 +42,16 @@ class TestLibrary < MiniTest::Test
     assert_nil(@library.book_information_from_title("generic_made_up_book"))
   end
 
-
   def test_rental_details_from_title__book_found
     assert_equal({:student_name=>"Joe", :date=>"01/05/19"}, @library.rental_details_from_title("learn_to_program"))
   end
 
   def test_rental_details_from_title__book_not_found
     assert_nil(@library.rental_details_from_title("generic_made_up_book"))
+  end
+
+  def test_add_book_to_library
+    assert_equal({:title=>"Schott's Miscellany", :rental_details=>{:student_name=>"", :date=>""}}, @library.add_book_to_library("Schott's Miscellany").last)
   end
 
 
