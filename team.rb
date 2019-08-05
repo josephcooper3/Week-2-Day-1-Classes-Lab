@@ -21,4 +21,9 @@ class Team
     return false
   end
 
+  def update_points(outcome)
+    @points += 3 if outcome == "win"
+    @points += 1 if outcome == "draw"
+  end
+
 end
