@@ -1,12 +1,13 @@
 class Team
 
-  attr_reader :name
+  attr_reader :name, :points
   attr_accessor :players, :coach
 
   def initialize(input_name, input_players, input_coach)
     @name = input_name
     @players = input_players
     @coach = input_coach
+    @points = 0
   end
 
   def add_new_player(new_player)
