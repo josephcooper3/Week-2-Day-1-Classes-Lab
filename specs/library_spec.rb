@@ -54,5 +54,10 @@ class TestLibrary < MiniTest::Test
     assert_equal({:title=>"Schott's Miscellany", :rental_details=>{:student_name=>"", :date=>""}}, @library.add_book_to_library("Schott's Miscellany").last)
   end
 
+  def test_borrow_book
+    @library.borrow_book("harry_potter", "Joe", "31/08/2019")
+    assert_equal("Joe", @library.book_information_from_title("harry_potter")[:rental_details][:student_name])
+    assert_equal("31/08/2019", @library.book_information_from_title("harry_potter")[:rental_details][:date])
+  end
 
 end

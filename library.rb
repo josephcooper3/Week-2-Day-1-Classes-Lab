@@ -26,4 +26,13 @@ class Library
     @books << {:title=>title_to_add, :rental_details=>{:student_name=>"", :date=>""}}
   end
 
+  def borrow_book(title_to_borrow, borrower, new_due_date)
+    for book in @books
+      if book[:title] == title_to_borrow
+        book[:rental_details][:student_name] = borrower
+        book[:rental_details][:date] = new_due_date
+      end
+    end
+  end
+
 end
