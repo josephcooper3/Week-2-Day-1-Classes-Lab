@@ -34,4 +34,8 @@ class TestLibrary < MiniTest::Test
     assert_equal({:title=>"learn_to_program", :rental_details=>{:student_name=>"Joe", :date=>"01/05/19"}}, @library.get_book(0))
   end
 
+  def test_book_information_from_title
+    assert_equal({:title=>"learn_to_program", :rental_details=>{:student_name=>"Joe", :date=>"01/05/19"}}, @library.book_information_from_title("learn_to_program"))
+  end
+
 end
