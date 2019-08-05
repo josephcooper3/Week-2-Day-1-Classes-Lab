@@ -31,4 +31,12 @@ class TestTeam < MiniTest::Test
     assert_equal(["Jonny", "Steve", "Robbie", "Davie", "Jan", "Mungo"], @team.add_new_player("Mungo"))
   end
 
+  def test_check_if_player_is_in_team__player_found
+    assert_equal(true, @team.check_if_player_is_in_team("Jan"))
+  end
+
+  def test_check_if_player_is_in_team__player_not_found
+    assert_equal(false, @team.check_if_player_is_in_team("Donald"))
+  end
+
 end
